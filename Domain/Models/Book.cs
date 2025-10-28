@@ -1,6 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using LibraryAPI.Domain.Attributes;
+using System.ComponentModel.DataAnnotations;
 
-namespace LibraryAPI.Models
+namespace LibraryAPI.Domain.Models
 {
     public class Book
     {
@@ -8,7 +9,7 @@ namespace LibraryAPI.Models
         public int Id { get; set; }
 
         [Required]
-        public string Title { get; set; }
+        public string Title { get; set; } = string.Empty;
 
         [YearRange(-5000)]
         public int PublishedYear { get; set; }

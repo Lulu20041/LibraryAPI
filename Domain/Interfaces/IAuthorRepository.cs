@@ -1,14 +1,14 @@
-﻿using LibraryAPI.Models;
+﻿using LibraryAPI.Domain.Models;
 
-namespace LibraryAPI.DataAccess
+namespace LibraryAPI.Domain.Interfaces
 {
     public interface IAuthorRepository
     {
         public Author GetById(int id);
 
-        public List<Author> GetAll();
+        public IQueryable<Author> GetAll();
 
-        public void Add(Author book);
+        public void Insert(Author book);
 
         public void Update(Author book);
 

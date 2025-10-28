@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LibraryAPI.Models
+namespace LibraryAPI.Domain.Models
 {
     public class Author
     {
@@ -8,9 +8,10 @@ namespace LibraryAPI.Models
         public int Id { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         public DateTime DateOfBirth { get; set; }
 
+        public ICollection<Book> Books { get; set; } = new List<Book>(); 
     }
 }
